@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,34 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for our invoice UI
+				"invoice-purple": {
+					50: "#f5f3ff",
+					100: "#ede9fe",
+					200: "#ddd6fe",
+					300: "#c4b5fd",
+					400: "#a78bfa",
+					500: "#8b5cf6",
+					600: "#7c3aed",
+					700: "#6d28d9",
+					800: "#5b21b6",
+					900: "#4c1d95",
+					950: "#2e1065",
+				},
+				"invoice-orange": {
+					50: "#fff7ed",
+					100: "#ffedd5",
+					200: "#fed7aa",
+					300: "#fdba74",
+					400: "#fb923c", 
+					500: "#f97316",
+					600: "#ea580c",
+					700: "#c2410c",
+					800: "#9a3412",
+					900: "#7c2d12",
+					950: "#431407",
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +112,63 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						'box-shadow': '0 0 0 0 rgba(139, 92, 246, 0.2)'
+					},
+					'50%': {
+						'box-shadow': '0 0 0 15px rgba(139, 92, 246, 0)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.4s ease-out',
+				'fade-out': 'fade-out 0.4s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'scale-out': 'scale-in 0.3s reverse ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite',
+				'float': 'float 6s ease-in-out infinite'
 			}
 		}
 	},
